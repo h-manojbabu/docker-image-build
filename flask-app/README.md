@@ -147,7 +147,7 @@ docker run -d -p 5000:5000 hmanojbabu/flask-app:v1
 
 ## Learning Outcomes
 
-This project helped me understand:
+This project helped to understand:
 
 - Python Flask Basics
 - Dockerfile Instructions
