@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: flask-config-deployment
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: flask-config
+
+  template:
+
+    metadata:
+      labels:
+        app: flask-config
+
+    spec:
+
+      containers:
+      - name: flask-app
+
+        image: hmanojbabu/flask-configmap:v1
+
+        env:
+
+        - name: APP_NAME
+
+          valueFrom:
+            configMapKeyRef:
+              name: flask-config
+              key: APP_NAME
+
+        ports:
+        - containerPort: 5000
